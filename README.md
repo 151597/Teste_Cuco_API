@@ -4,7 +4,7 @@ O Teste Cuco é uma API que da suporte para aplicação front -end em Vue JS com
 Ele fornece endpoints para criação e manutenção dos usuários do sistema com base nas definições do banco de dados.
 
 A documentação foi gerada a partir do postman no link:
-https://www.postman.com/collections/ebf5a54994762b32414c
+https://www.postman.com/collections/eed16cab09ec170c2c23
 
 ## Install
 
