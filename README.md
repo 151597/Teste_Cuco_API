@@ -31,10 +31,6 @@ https://www.postman.com/collections/eed16cab09ec170c2c23
 
         php artisan key:generate
 
-    Generate a new JWT authentication secret key
-
-        php artisan jwt:generate
-
 ## Run the app
 
     php artisan serve
