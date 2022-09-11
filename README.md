@@ -6,6 +6,9 @@ Ele fornece endpoints para criação e manutenção dos usuários do sistema com
 A documentação foi gerada a partir do postman no link:
 https://www.postman.com/collections/eed16cab09ec170c2c23
 
+## API Teste
+    Para testar os Enpoints para importar o link no aplicativo e ter acesso a Collection.
+
 ## Install
 
     Clone the repository
