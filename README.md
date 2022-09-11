@@ -13,7 +13,7 @@ https://www.postman.com/collections/eed16cab09ec170c2c23
 
     Clone the repository
 
-        git clone -b master git clone https://github.com/151597/teste_cuco_api.git
+        git clone -b master https://github.com/151597/teste_cuco_api.git
 
     Switch to the repo folder
 
