@@ -89,8 +89,13 @@ class userController extends Controller
     public function update(Request $request, $id)
     {
         $update = new Users();
-        $update->where('id', $id)->update(['nome' => $request->nome, 'cpf' => $request->cpf, 
-            'data_nascimento'=> $request->dateFormatted, 'telefone' => $request->telefone]);
+        $update->where('id', $id)
+            ->update([
+                'nome' => $request->nome, 
+                'cpf' => $request->cpf, 
+                'data_nascimento'=> $request->dateFormatted, 
+                'telefone' => $request->telefone
+            ]);
 
         return response()->json([
             'success' => true,
