@@ -31,13 +31,14 @@ https://www.postman.com/collections/eed16cab09ec170c2c23
 
         php artisan key:generate
 
-## Run the app
-
-    php artisan serve
-
 ## migrations
 
     php artisan migrate
+
+## Run the app
+
+    php artisan serve
+    
 ## You can now access the server at http://localhost:8000
 
 
