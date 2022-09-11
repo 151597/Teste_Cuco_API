@@ -11,26 +11,11 @@ use DB;
 
 class userController extends Controller
 {
+
     /**
-     * @OA\Get(
-     *      path="/users",
-     *      operationId="getUsersList",
-     *      tags={"Users"},
-     *      summary="Get list of users",
-     *      description="Returns list of users",
-     *      @OA\Response(
-     *          response=200,
-     *          description="Successful operation",
-     *       ),
-     *      @OA\Response(
-     *          response=401,
-     *          description="Unauthenticated",
-     *      ),
-     *      @OA\Response(
-     *          response=403,
-     *          description="Forbidden"
-     *      )
-     *     )
+     * Lista os Usuários cadastrados.
+     *
+     * @return \Illuminate\Http\Response
      */
 
     public function index()
@@ -40,33 +25,11 @@ class userController extends Controller
     }
 
     /**
-     * @OA\Post(
-     *      path="/users",
-     *      operationId="storeUsers",
-     *      tags={"Users"},
-     *      summary="Store new users",
-     *      description="Returns users data",
-     *      @OA\RequestBody(
-     *          required=true
-     *      ),
-     *      @OA\Response(
-     *          response=201,
-     *          description="Successful operation"
-     *       ),
-     *      @OA\Response(
-     *          response=400,
-     *          description="Bad Request"
-     *      ),
-     *      @OA\Response(
-     *          response=401,
-     *          description="Unauthenticated",
-     *      ),
-     *      @OA\Response(
-     *          response=403,
-     *          description="Forbidden"
-     *      )
-     * )
+     * Salva um novo Usuário.
+     *
+     * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         // return response()->json($request);
@@ -99,7 +62,7 @@ class userController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Verifica se um cpf já existe.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -117,56 +80,12 @@ class userController extends Controller
     }
 
     /**
-     * @OA\Put(
-     *      path="/users/{id}",
-     *      operationId="updateUsers",
-     *      tags={"Users"},
-     *      summary="Update existing users",
-     *      description="Returns updated users data",
-     *      @OA\Parameter(
-     *          name="id",
-     *          description="users id",
-     *          required=true,
-     *          in="path",
-     *          @OA\Schema(
-     *              type="integer"
-     *          )
-     *      ),
-     *      @OA\RequestBody(
-     *          required=true,
-     *          @OA\MediaType(
-     *             mediaType="multipart/form-data",
-     *             @OA\Schema(
-     *                 @OA\Property(
-     *                     property="nome",
-     *                     type="array",
-     *                     @OA\Items(type="string")
-     *                 )
-     *             )
-     *         )
-     *      ),
-     *      @OA\Response(
-     *          response=202,
-     *          description="Successful operation",
-     *       ),
-     *      @OA\Response(
-     *          response=400,
-     *          description="Bad Request"
-     *      ),
-     *      @OA\Response(
-     *          response=401,
-     *          description="Unauthenticated",
-     *      ),
-     *      @OA\Response(
-     *          response=403,
-     *          description="Forbidden"
-     *      ),
-     *      @OA\Response(
-     *          response=404,
-     *          description="Resource Not Found"
-     *      )
-     * )
+     * Atualza o usuário pelo ID.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         $update = new Users();
@@ -180,40 +99,12 @@ class userController extends Controller
     }
 
     /**
-     * @OA\Delete(
-     *      path="/users/{id}",
-     *      operationId="deleteUsers",
-     *      tags={"Users"},
-     *      summary="Delete existing users",
-     *      description="Deletes a record and returns no content",
-     *      @OA\Parameter(
-     *          name="id",
-     *          description="users id",
-     *          required=true,
-     *          in="path",
-     *          @OA\Schema(
-     *              type="integer"
-     *          )
-     *      ),
-     *      @OA\Response(
-     *          response=204,
-     *          description="Successful operation",
-     *          @OA\JsonContent()
-     *       ),
-     *      @OA\Response(
-     *          response=401,
-     *          description="Unauthenticated",
-     *      ),
-     *      @OA\Response(
-     *          response=403,
-     *          description="Forbidden"
-     *      ),
-     *      @OA\Response(
-     *          response=404,
-     *          description="Resource Not Found"
-     *      )
-     * )
+     * Exlcui o usuário pelo ID.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $delete = new Users();
