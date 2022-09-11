@@ -37,8 +37,7 @@ class userController extends Controller
                       [ 
                       'nome' => 'required',
                       'cpf' => 'required',
-                      'dateFormatted' => 'required',  
-                      'telefone' => 'required',  
+                      'dateFormatted' => 'required' 
                      ]);  
 
          if ($validator->fails()) {  

@@ -15,10 +15,10 @@ class CreateUserTable extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->nullable(false);
+            $table->string('nome');
             $table->string('cpf')->length(11)->ununsigned()->unique();
-            $table->timestamp('data_nascimento')->nullable(false);
-            $table->bigInteger('telefone')->length(14)->ununsigned();
+            $table->timestamp('data_nascimento');
+            $table->bigInteger('telefone')->length(14)->nullable(true)->ununsigned();
             $table->timestamps();
         });
     }
