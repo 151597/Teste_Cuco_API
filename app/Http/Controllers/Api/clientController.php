@@ -6,10 +6,10 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Models\Users;
+use App\Models\Clients;
 use DB;
 
-class userController extends Controller
+class clientController extends Controller
 {
 
     /**
@@ -20,8 +20,8 @@ class userController extends Controller
 
     public function index()
     {
-        $users = Users::select('id','nome', 'cpf', DB::raw("date_format(data_nascimento,'%d/%m/%Y') as data_nascimento"), 'telefone')->get();
-        return response()->json($users);
+        $clients = Clients::select('id','nome', 'cpf', DB::raw("date_format(data_nascimento,'%d/%m/%Y') as data_nascimento"), 'telefone')->get();
+        return response()->json($clients);
     }
 
     /**
@@ -46,7 +46,7 @@ class userController extends Controller
 
             }   
 
-        $user = new Users();
+        $user = new Clients();
         $user->nome = $request->nome;
         $user->cpf = $request->cpf;
         $user->data_nascimento = $request->dateFormatted;
@@ -68,7 +68,7 @@ class userController extends Controller
      */
     public function show($cpf)
     {
-        $cpf = Users::select('cpf')->where('cpf', $cpf)->first();
+        $cpf = Clients::select('cpf')->where('cpf', $cpf)->first();
         if($cpf){
             return response()->json([
                 'exists' => true,
@@ -87,7 +87,7 @@ class userController extends Controller
 
     public function update(Request $request, $id)
     {
-        $update = new Users();
+        $update = new Clients();
         $update->where('id', $id)
             ->update([
                 'nome' => $request->nome, 
@@ -111,7 +111,7 @@ class userController extends Controller
 
     public function destroy($id)
     {
-        $delete = new Users();
+        $delete = new Clients();
         $delete->where('id', $id)->delete();
 
         return response()->json([
