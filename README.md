@@ -7,7 +7,7 @@ A documentação foi gerada a partir do postman no link:
 https://www.getpostman.com/collections/0c6d4abbd23ab1e3880f
 
 ## API Teste
-    Para testar os Enpoints para importar o link no aplicativo e ter acesso a Collection.
+    Para testar os Enpoints basta importar o link no aplicativo e ter acesso a Collection.
 
 ## Install
 
